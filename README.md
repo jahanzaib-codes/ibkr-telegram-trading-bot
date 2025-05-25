@@ -1,48 +1,42 @@
 ```markdown
-# 🤖 IBKR Telegram Trading Bot (Beginner's Guide)
+### 🤖 IBKR Telegram Trading Bot (Beginner's Guide)
 
-## 📌 What This Bot Does
+### 📌 What This Bot Does
 1. Connects to your IBKR account
 2. Lets you trade via Telegram messages
 3. Works with TradingView webhooks
 
-## 🛠️ Setup (3 Steps)
+### 🛠️ Setup (3 Steps)
 
 ### 1. Install Requirements
 ```bash
-pip install ib_insync python-telegram-bot flask
-```
+pip install ib_insync python-telegram-bot flask```
 
 ### 2. Edit These Lines in bot.py
 ```python
 TELEGRAM_TOKEN = "123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11"  # Get from @BotFather
-TELEGRAM_CHAT_ID = "1798492490"  # Your Telegram ID (get from @userinfobot)
+TELEGRAM_CHAT_ID = "Chat Id"  # Your Telegram ID (get from @userinfobot)
 IBKR_HOST = "127.0.0.1"         # Keep this if running on same computer
-IBKR_PORT = 7497                # Default IBKR port
-```
+IBKR_PORT = 7497                # Default IBKR port```
 
 ### 3. Run the Bot
 ```bash
-python bot.py
-```
+python bot.py```
 
 ## 📱 Basic Telegram Commands
 
 ### Set Up a Trade
 ```bash
-/set AAPL 500 3
-```
+/set AAPL 500 3```
 (Means: Trade $500 of AAPL with 3% profit target)
 
 ### Check Settings
 ```bash
-/show
-```
+/show```
 
 ### Test a Trade (No real money)
 ```bash
-/test_order TSLA BUY 250 2 2024-05-01
-```
+/test_order TSLA BUY 250 2 2024-05-01```
 
 ### Real Trade
 ```bash
@@ -53,8 +47,7 @@ python bot.py
 
 1. Use this URL:
 ```bash
-http://your-server-ip:5000/webhook
-```
+http://your-server-ip:5000/webhook```
 
 2. Send this JSON:
 ```json
@@ -62,8 +55,7 @@ http://your-server-ip:5000/webhook
   "ticker": "AAPL",
   "action": "buy",
   "price": 182.50
-}
-```
+}```
 
 ## 📁 All Files Explained
 
@@ -73,8 +65,7 @@ http://your-server-ip:5000/webhook
 # It contains all the code to:
 # - Read Telegram messages
 # - Connect to IBKR
-# - Save your settings
-```
+# - Save your settings```
 
 ### 2. configurations.json (Auto-Created)
 ```json
@@ -83,14 +74,12 @@ http://your-server-ip:5000/webhook
     "order_size_usd": 500,
     "min_profit_percent": 3.0
   }
-}
-```
+}```
 (The bot creates this automatically)
 
 ### 3. .gitignore (Optional)
 ```bash
-configurations.json
-```
+configurations.json```
 (Prevents saving your settings online)
 
 ## ▶️ How to Start Trading
@@ -98,8 +87,7 @@ configurations.json
 2. Keep it running in background
 3. Run the bot:
 ```bash
-python bot.py
-```
+python bot.py```
 4. Send commands from Telegram
 
 ## ❓ Common Issues
@@ -108,6 +96,4 @@ python bot.py
 2. IBKR connection failed?
    - Make sure Trader Workstation is open
 3. Webhook not working?
-   - Check your firewall settings
-
-```
+   - Check your firewall settings```
