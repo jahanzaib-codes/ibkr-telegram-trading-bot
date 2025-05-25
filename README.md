@@ -1,17 +1,18 @@
+
 # IBKR Telegram Trading Bot (Single File)
 
-Yeh project ek **Interactive Brokers (IBKR)** ke sath connected automated trading bot hai jo **Telegram commands aur webhook alerts** se control hota hai.
+This is a fully self-contained trading bot that connects to **Interactive Brokers (IBKR)** and is controlled via **Telegram commands** and **webhook alerts**.
 
-✅ **Single File Project** — Sab kuch `bot.py` mein hai.  
-📡 **Telegram Commands** — Ticker set karo, test order bhejo, aur configurations check karo.  
-📨 **Webhook** — TradingView alerts ya kisi external source se webhook trigger karo.
+✅ **Single File Project** — Everything is in `bot.py`.  
+📡 **Telegram Commands** — Configure tickers, simulate orders, view saved configs.  
+📨 **Webhook Integration** — Trigger orders from TradingView or any webhook source.
 
 ---
 
 ## 👨‍💻 Requirements
 
 - Python 3.10+
-- IB Gateway ya Trader Workstation (TWS)
+- IB Gateway or Trader Workstation (TWS)
 - Telegram Bot Token
 - IBKR Paper Trading Account
 
@@ -19,11 +20,11 @@ Yeh project ek **Interactive Brokers (IBKR)** ke sath connected automated tradin
 
 ```bash
 pip install flask python-telegram-bot==20.7 ib_insync
-````
+```
 
 ---
 
-## 🚀 Run Bot
+## 🚀 Run the Bot
 
 ```bash
 python bot.py
@@ -33,12 +34,12 @@ python bot.py
 
 ## 📲 Telegram Commands
 
-| Command       | Example                                 | Description                                        |
-| ------------- | --------------------------------------- | -------------------------------------------------- |
-| `/start`      | —                                       | Bot instructions show karta hai                    |
-| `/set`        | `/set AAPL 500 2.5`                     | Ticker set karo with dollar amount & target profit |
-| `/show`       | —                                       | Saved configurations dikhata hai                   |
-| `/test_order` | `/test_order AAPL BUY 190 5 2025-06-01` | Test order simulate karta hai                      |
+| Command | Example | Description |
+|--------|---------|-------------|
+| `/start` | — | Shows bot instructions |
+| `/set` | `/set AAPL 500 2.5` | Set ticker with amount (USD) and profit target (%) |
+| `/show` | — | Displays current configurations |
+| `/test_order` | `/test_order AAPL BUY 190 5 2025-06-01` | Simulates a test trade with given parameters |
 
 ---
 
@@ -50,7 +51,7 @@ python bot.py
 POST http://<your-ip>:5000/webhook
 ```
 
-### Payload Example:
+### Example Payload:
 
 ```json
 {
@@ -59,12 +60,12 @@ POST http://<your-ip>:5000/webhook
 }
 ```
 
-* `"buy"` → IBKR pe buy order place karega
-* `"sell"` → Agar profit target achieve ho gaya ho to sell karega
+- `"buy"` → Places a limit buy order on IBKR
+- `"sell"` → Sells if profit target is met
 
 ---
 
-## 💡 Example Output (Telegram)
+## 📥 Telegram Output Example
 
 ```
 🧪 Test Order Simulation:
@@ -78,7 +79,7 @@ POST http://<your-ip>:5000/webhook
 
 ---
 
-## 🧾 Example Configuration (Auto saved in same folder)
+## 🧾 Example Configuration (Auto-saved)
 
 ```json
 {
@@ -91,56 +92,61 @@ POST http://<your-ip>:5000/webhook
 
 ---
 
-## 🧠 What This Bot Does Internally
+## ⚙️ Internal Logic
 
-* `Flask` ka use karke webhook endpoint create karta hai
-* `ib_insync` ke through IBKR TWS ke sath connect hota hai
-* Telegram commands se:
-
-  * Configurations save hoti hain
-  * Test order simulate hota hai
-* Jab webhook `/webhook` call hota hai:
-
-  * `buy` → Limit Buy order place hoti hai
-  * `sell` → Agar profit percentage `target` se upar hai to Sell hoti hai
+- Uses `Flask` for the webhook endpoint
+- Uses `ib_insync` to connect to IBKR TWS
+- Telegram commands:
+  - Save configuration
+  - Simulate test order
+- Webhook `/webhook`:
+  - `buy` → Places order using saved config
+  - `sell` → Checks live position, sells if profit target met
 
 ---
 
-## 🔐 Security Tip
+## 🔐 Security Tips
 
-Make sure:
-
-* `bot.py` 
-* Server secure ho (use HTTPS/ngrok if exposing publicly)
+- Store Telegram token securely (use env variables in production)
+- If exposing server to internet, secure with HTTPS or use `ngrok`
 
 ---
 
-## 📁 File Structure (Single File)
+## 📁 File Structure
 
 ```
 📁 Project Folder
- └── bot.py          # All logic is here
+ └── bot.py          # All logic in a single file
 ```
 
-
-## 🤖 Telegram Setup Guide
-
-1. BotFather se new bot banao aur token le lo
-2. `bot.py` ke `TELEGRAM_TOKEN` variable mein paste karo
-3. Run karo `python bot.py`
-4. Telegram pe `/start` type karo
+No other files needed. Everything is handled within `bot.py`.
 
 ---
 
-## 🧪 IB Gateway / TWS Settings
+## 🤖 Telegram Bot Setup
 
-* Paper Trading enabled hona chahiye
-* TWS/Gateway port: `7497`
-* API Settings: Allow connections from localhost
+1. Create bot via BotFather, get the token
+2. Paste token in `bot.py` under `TELEGRAM_TOKEN`
+3. Run with `python bot.py`
+4. On Telegram, type `/start`
+
+---
+
+## 🧪 IB Gateway / TWS Setup
+
+- Paper Trading account must be enabled
+- TWS/Gateway must run on port `7497`
+- Enable API access from localhost
 
 ---
 
 ## ✨ Author
 
-Developed by **Jahanzaib**
+Built by **Jahanzaib**  
 GitHub: [github.com/jahanzaib-codes](https://github.com/jahanzaib-codes)
+
+---
+
+## 📄 License
+
+MIT License — Free to use, share, and modify.
