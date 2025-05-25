@@ -143,7 +143,6 @@ No other files needed. Everything is handled within `bot.py`.
 ## ✨ Author
 
 Built by **Jahanzaib**  
-GitHub: [github.com/jahanzaib-codes](https://github.com/jahanzaib-codes)
 
 ---
 
