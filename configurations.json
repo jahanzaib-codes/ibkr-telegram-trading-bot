@@ -1,0 +1,6 @@
+{
+  "AAPL": {
+    "order_size_usd": 300.0,
+    "min_profit_percent": 3.5
+  }
+}
