@@ -1,13 +1,3 @@
-Bilkul Jahanzaib! Neeche ek **simple aur clean `README.md` file** di gayi hai jo:
-
-* Har choti se choti cheez explain karti hai
-* Sirf ek hi file (`bot.py`) ka use dikhati hai
-* Usage, examples, setup, commands, sab kuch isi file ke andar likha gaya hai — bina kisi extra file ke
-* Professional aur beginner-friendly dono look maintain karta hai
-
----
-
-````markdown
 # IBKR Telegram Trading Bot (Single File)
 
 Yeh project ek **Interactive Brokers (IBKR)** ke sath connected automated trading bot hai jo **Telegram commands aur webhook alerts** se control hota hai.
@@ -120,7 +110,7 @@ POST http://<your-ip>:5000/webhook
 
 Make sure:
 
-* `bot.py` mein Telegram Token securely store karo (env variable preferred)
+* `bot.py` 
 * Server secure ho (use HTTPS/ngrok if exposing publicly)
 
 ---
@@ -132,9 +122,6 @@ Make sure:
  └── bot.py          # All logic is here
 ```
 
-Koi aur files ki zarurat nahi. Sab kuch `bot.py` ke andar handled hai.
-
----
 
 ## 🤖 Telegram Setup Guide
 
@@ -157,18 +144,3 @@ Koi aur files ki zarurat nahi. Sab kuch `bot.py` ke andar handled hai.
 
 Developed by **Jahanzaib**
 GitHub: [github.com/jahanzaib-codes](https://github.com/jahanzaib-codes)
-
----
-
-## 📄 License
-
-MIT License — Free to use, share, and modify.
-
-```
-
----
-
-Agar tum chaho to mein is readme ko `README.md` file ki tarah export bhi kar sakta hoon ya GitHub par push ka command bhi likh kar de sakta hoon.
-
-Kya tum chahte ho ke main is README ko `readme.md` file banakar download link doon?
-```
