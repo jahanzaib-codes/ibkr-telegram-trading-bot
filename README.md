@@ -13,7 +13,7 @@
 ### 💼 Need Custom TradingView Webhook Bots, IBKR Automations, or Telegram Terminals?
 I build custom webhook listeners, broker execution routers, low-latency trading software, and automated risk systems.
 * 💬 **Telegram:** [@JanzebBlockdev](https://t.me/JanzebBlockdev)
-* 💼 **Fiverr Profile:** [Verified Quantitative Developer (Fiverr)](https://tinyurl.com/2wruxnsx)
+* 💼 **Fiverr Profile:** [Verified Quantitative Developer (Fiverr)](https://www.fiverr.com/jahanzaib313110)
 * 📧 **Email:** `jahanzaibchanna70@gmail.com`
 
 ---
